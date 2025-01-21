@@ -27,3 +27,32 @@ let hisnewscoreInNumber = Number(hisnewscore);
 console.log(hisnewscoreInNumber);  // undefined when converted in number gives back NaN
 
 let loggedIn = 1
+
+let booleanLoggedIn = Boolean(loggedIn)
+console.log(typeof booleanLoggedIn)
+
+console.log(booleanLoggedIn)        // when 1 and 0 are converted in boolean they give true and false respectively
+
+let newLog = ""
+
+let booleanNewLog = Boolean(newLog)
+console.log(booleanNewLog)         // when empty string is converted in boolean it gives false
+
+let myLog = "kaushal"
+
+let booleanMyLog = Boolean(myLog)
+console.log(booleanMyLog)           // when a string is converted in boolean it gives true
+
+let number = 11
+
+let stringNumber = String(number);
+console.log(typeof stringNumber)    // we can also convert numbers to string
+
+console.log(stringNumber)
+
+let myNumber = true
+
+console.log(typeof myNumber)
+let stringMyNumber = String(myNumber)
+console.log(typeof stringMyNumber)  // we can convert boolean to string
+console.log(stringMyNumber)
