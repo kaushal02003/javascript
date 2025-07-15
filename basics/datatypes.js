@@ -18,4 +18,4 @@ console.log(typeof temp)//null is an object
 
 console.log(typeof place)//undefined is a standalone datatype
 
-console.log("hii");
+console.log("hii")
