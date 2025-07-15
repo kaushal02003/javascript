@@ -17,3 +17,5 @@ console.log(typeof place); console.log(typeof name) //we do not write code like 
 console.log(typeof temp)//null is an object
 
 console.log(typeof place)//undefined is a standalone datatype
+
+console.log("hii");
