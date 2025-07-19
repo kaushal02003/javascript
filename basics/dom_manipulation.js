@@ -81,16 +81,114 @@ console.log(containerText);
 //1.createElement
 //------insert element into the DOM---------
 //to insert the created element into the DOM, we can use the following methods:
-//1.appendChild
-//2.insertAdjacentElement
-//3.insertAdjacentHTML
+//1.appendChild : this method appends a node as the last child of a node.
+//2.insertAdjacentElement : this method inserts a node at a specified position relative to the element.
+//3.insertAdjacentHTML 
+
+//the positions where we can insert the element using insertAdjacentElement are:
+//beforebegin : before the element itself
+//afterbegin : just inside the element, before its first child
+//beforeend : just inside the element, after its last child 
+//afterend : after the element itself
 
 
 //create element
 let element = document.createElement("h4");
 element.innerHTML = "this element is created after.";
 //appendChild
-container
+container.appendChild(element);
+//insertAdjacentElement
+let newElement = document.createElement("h5");
+newElement.innerHTML = "this element is also created after.";
+container.insertAdjacentElement("beforebegin",newElement);
+
+//----remove element-------
+//to remove an element from the DOM, we can use the following methods:
+//1.remove : this method removes the element from the DOM.
+//2.removeChild : this method removes a child element from the DOM.
+//3.replaceChild : this method replaces a child element with a new element.
+
+//remove
+let removeElement = document.getElementById("fpara");
+removeElement.remove(); //this will remove the element with id remove from the DOM
+
+//removeChild
+let tpara = document.getElementById("tpara");
+container.removeChild(tpara);
+
+//----styling elements-------
+//to style elements in the DOM, we can use the following methods:
+//1.style : this property allows us to set the style of the element.
+//2.CSStext : this property allows us to set the CSS text of the element.
+//3.setAttribute : this method allows us to set the attribute of the element.
+//4.className : this property allows us to set the class name of the element.
+//5.classList : this property allows us to add, remove, toggle classes of the element.
+
+
+//----style-----
+let firstPara = document.getElementById("firstPara");
+//using it as a getter property
+console.log(firstPara.style);
+//using it as a setter property
+firstPara.style.backgroundColor = "red";
+
+//----CSStext-----
+let secondPara = document.getElementById("secondPara");
+//using it as a getter property
+console.log(secondPara.style.cssText);
+//using it as a setter property
+secondPara.style.cssText = "background-color: blue;"
+console.log(secondPara.style.cssText); //this property dont just change the attribute written in code but also removes the other attributes
+//which were previously written.
+
+//----setAttribute-----
+let secondDiv = document.getElementById("secondDiv");
+//it can only be used as a setter property
+secondDiv.setAttribute("class","setDiv"); //we set the class of secondDiv to setDiv.
+console.log(document.querySelector(".setDiv"));
+//we can also use it to set css
+secondDiv.setAttribute("style","background-color: yellow;")
+console.log(document.querySelector(".setDiv"));
+
+//----className-----
+let div = document.getElementById("div");
+//using it as a getter property
+console.log(secondDiv.className);
+//using it as a setter property
+div.className = "newDiv";
+console.log(div.className);
+
+//----classList-----
+let nextDiv = document.getElementById("nextDiv");
+//using it as a getter property
+console.log(nextDiv.classList);
+//using it as a setter property
+//to add
+nextDiv.classList.add("thirdClass");
+console.log(nextDiv.classList);
+
+//to remove
+nextDiv.classList.remove("firstClass");
+console.log(nextDiv.classList);
+
+//to toggle
+//to hide
+let response = nextDiv.classList.toggle("secondClass");
+console.log(response);
+console.log(nextDiv.classList);
+//to make it appear back
+let response1 = nextDiv.classList.toggle("secondClass");
+console.log(response1);
+console.log(nextDiv.classList);
+
+//to check if it contains a class
+let response2 = nextDiv.classList.contains("firstClass");
+console.log(response2);
+let response3 = nextDiv.classList.contains("secondClass");
+console.log(response3);
+
+
+
 
 
 
