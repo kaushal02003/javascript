@@ -414,7 +414,7 @@ drr.forEach((value,index,kll) => {                         //the order here is v
     console.log("value:",value,"index:",index,"array:",kll);
 });
 
-//----for-of loop-----  
+//----for of loop-----  
 //this is used to iterate in an array and strings to get its values only
 let arr1 = "kaushal"
 for(let value of arr1){
