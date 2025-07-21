@@ -24,3 +24,19 @@ for(let i=1; i<=100; i++){
 document.body.appendChild(div);
 const t4 = performance.now();
 console.log("time taken by code2: ",t4-t3);
+
+//----using document fragment---
+
+let t5 = performance.now();
+//this is the most optimised way since documentfragment itself need no reflow and repaint.
+let fragment = document.createDocumentFragment();
+for (let i = 1; i < 100; i++) {
+    let para = document.createElement("p");
+    para.textContent = "This is para: "+i;
+    fragment.appendChild(para);
+}
+//only 1 reflow and 1 repaint is required 
+document.body.appendChild(fragment);
+
+let t6 = performance.now();
+console.log("this is time after using document fragment: ",t6-t5);
